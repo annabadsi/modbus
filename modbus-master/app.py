@@ -31,8 +31,7 @@ def toggled_rtu_status():
     state = args["status"]
 
     if state == untoggled1:
-        client = ModbusSerialClient(method='rtu', port='/dev/ttyS0', timeout=1, baudrate=9600)
-	client.connect()
+        client = ModbusSerialClient(method='rtu', port='/dev/ttyS0', timeout=1, baudrate=460800)
 	log.debug("Writing Coils")
         rq = client.write_coil(1, True, unit=UNIT)
 	log.debug(rq)
@@ -45,7 +44,7 @@ def toggled_rtu_status():
         print new_state
         return new_state
     else:
-        client = ModbusSerialClient(method='rtu', port='/dev/ttyS0', timeout=1, baudrate=9600)
+        client = ModbusSerialClient(method='rtu', port='/dev/ttyS0', timeout=1, baudrate=460800)
 	log.debug("Writing Coils")
         rq = client.write_coil(1, False, unit=UNIT)
 	log.debug(rq)
