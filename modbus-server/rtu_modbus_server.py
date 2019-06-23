@@ -30,7 +30,9 @@ from twisted.internet.task import LoopingCall
 # configure the service logging
 # --------------------------------------------------------------------------- #
 import logging
-logging.basicConfig()
+FORMAT = ('%(asctime)-15s %(threadName)-15s'
+	  ' %(levelname)-8s %(module)-15s:%(lineno)-8s %(message)s')
+logging.basicConfig(format=FORMAT)
 log = logging.getLogger()
 log.setLevel(logging.DEBUG)
 
@@ -79,9 +81,9 @@ def run_updating_server():
     # initialize the server information
     # ----------------------------------------------------------------------- # 
     identity = ModbusDeviceIdentification()
-    identity.VendorName = 'pymodbus'
+    identity.VendorName = 'Pymodbus'
     identity.ProductCode = 'PM'
-    identity.VendorUrl = 'http://github.com/bashwork/pymodbus/'
+    identity.VendorUrl = 'http://github.com/riptideio/pymodbus/'
     identity.ProductName = 'pymodbus Server'
     identity.ModelName = 'pymodbus Server'
     identity.MajorMinorRevision = '2.2.0'
@@ -92,7 +94,7 @@ def run_updating_server():
     time = 0.5  # 5 seconds delay
     loop = LoopingCall(f=updating_writer, a=(context,))
     loop.start(time, now=False) # initially delay by time
-    StartSerialServer(context, framer=ModbusRtuFramer, identity=identity, port='/dev/ttyS0', timeout=.005, baudrate=9600)
+    StartSerialServer(context, framer=ModbusRtuFramer, identity=identity, port='/dev/ttyS0', timeout=1, baudrate=9600)
 
 
 if __name__ == "__main__":
