@@ -94,7 +94,7 @@ def run_updating_server():
     time = 0.5  # 5 seconds delay
     loop = LoopingCall(f=updating_writer, a=(context,))
     loop.start(time, now=False) # initially delay by time
-    StartSerialServer(context, framer=ModbusRtuFramer, identity=identity, port='/dev/ttyS0', timeout=1, baudrate=9600)
+    StartSerialServer(context, framer=ModbusRtuFramer, identity=identity, port='/dev/ttyS0', timeout=1, baudrate=460800)
 
 
 if __name__ == "__main__":
