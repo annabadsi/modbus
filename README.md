@@ -3,10 +3,10 @@
 ## Setup
 - start each ([modbus-master](https://github.com/annabadsi/modbus/tree/master/modbus-master) and [modbus-slave](https://github.com/annabadsi/modbus/tree/master/modbus-slave)) on one Raspberry PI
 - the [modbus-slave](https://github.com/annabadsi/modbus/tree/master/modbus-slave) has to be connected to an LED
-- browse on your laptop (same network as the modbus-master) the webserver which were started by the modbus-master
+- to turn the LED on and off via modbus browse on your laptop the [webserver](http://192.168.xxx.xx:5000/) which were started by the modbus-master
 
 ### Setup RTU
-- the Raspberry Pi UARTs may need to be configured, see [documentation](https://www.raspberrypi.org/documentation/configuration/uart.md), if so then restart afterwards
+- the Raspberry PI UARTs may need to be configured, see [documentation](https://www.raspberrypi.org/documentation/configuration/uart.md), if so then restart afterwards
 
 ### Setup TCP
 - both Raspberry PI must be connected with the same network
