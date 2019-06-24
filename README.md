@@ -19,7 +19,7 @@
 
 - 2x [Raspberry PI 3 B+](https://www.reichelt.de/raspberry-pi-3-b-4x-1-4-ghz-1-gb-ram-wlan-bt-raspberry-pi-3b-p217696.html?PROVID=2788&gclid=CjwKCAjwxrzoBRBBEiwAbtX1n1o4QIg8uV4L9559LD1cWGnWN1Uzz1JDwLJy6BZEkQ_UwnEOCxNHvxoCBtoQAvD_BwE&&r=1)
 - 2x [RS-485 adapter](https://www.reichelt.de/raspberry-pi-shield-rs485-schnittstelle-rpi-rs485-p162304.html)
-- 2x 120 ohm resistors
+- 2x 120 ohm termination resistors  
 - serial cable
 - breadboard & led
 
