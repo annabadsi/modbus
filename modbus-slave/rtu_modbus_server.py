@@ -43,7 +43,7 @@ log.setLevel(logging.DEBUG)
 import RPi.GPIO as GPIO
 import time
 
-ledPin = 12
+LED_PIN = 12
 
 def updating_writer(a):
     """ A worker process that runs every so often and
@@ -60,10 +60,10 @@ def updating_writer(a):
     values = context[slave_id].getValues(register, address, count=1)
     if values[0] == True:
         log.debug("LED ein")
-        GPIO.output(ledPin, GPIO.HIGH)
+        GPIO.output(LED_PIN, GPIO.HIGH)
     else:
         log.debug("LED aus")
-        GPIO.output(ledPin, GPIO.LOW)
+        GPIO.output(LED_PIN, GPIO.LOW)
 
 def run_updating_server():
     # ----------------------------------------------------------------------- # 
@@ -99,6 +99,6 @@ def run_updating_server():
 
 if __name__ == "__main__":
     GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(ledPin, GPIO.OUT)
+    GPIO.setup(LED_PIN, GPIO.OUT)
     run_updating_server()
 
